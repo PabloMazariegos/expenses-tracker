@@ -22,9 +22,6 @@ dependencies:
     version: 18.3.1(react@18.3.1)
 
 devDependencies:
-  '@eslint/js':
-    specifier: ^9.11.1
-    version: 9.11.1
   '@types/node':
     specifier: ^20
     version: 20.16.10
@@ -35,17 +32,11 @@ devDependencies:
     specifier: ^18
     version: 18.3.0
   eslint:
-    specifier: ^8.57.1
+    specifier: ^8
     version: 8.57.1
   eslint-config-next:
     specifier: 14.2.13
     version: 14.2.13(eslint@8.57.1)(typescript@5.6.2)
-  eslint-plugin-react:
-    specifier: ^7.37.0
-    version: 7.37.0(eslint@8.57.1)
-  globals:
-    specifier: ^15.9.0
-    version: 15.9.0
   postcss:
     specifier: ^8
     version: 8.4.47
@@ -55,9 +46,6 @@ devDependencies:
   typescript:
     specifier: ^5
     version: 5.6.2
-  typescript-eslint:
-    specifier: ^8.8.0
-    version: 8.8.0(eslint@8.57.1)(typescript@5.6.2)
 
 packages:
 
@@ -107,11 +95,6 @@ packages:
   /@eslint/js@8.57.1:
     resolution: {integrity: sha512-d9zaMRSTIKDLhctzH12MtXvJKSSUhaHcjV+2Z+GK+EEY7XKpP5yR4x+N3TAcHTcu963nIr+TMcCb4DBCYX1z6Q==}
     engines: {node: ^12.22.0 || ^14.17.0 || >=16.0.0}
-    dev: true
-
-  /@eslint/js@9.11.1:
-    resolution: {integrity: sha512-/qu+TWz8WwPWc7/HcIJKi+c+MOm46GdVaSlTTQcaqaL53+GsoA6MxWp5PtTx48qbSP7ylM1Kn7nhvkugfJvRSA==}
-    engines: {node: ^18.18.0 || ^20.9.0 || >=21.1.0}
     dev: true
 
   /@formatjs/ecma402-abstract@2.0.0:
@@ -4414,11 +4397,6 @@ packages:
       type-fest: 0.20.2
     dev: true
 
-  /globals@15.9.0:
-    resolution: {integrity: sha512-SmSKyLLKFbSr6rptvP8izbyxJL4ILwqO9Jg23UA0sDlGlu58V59D1//I3vlc0KJphVdUR7vMjHIplYnzBxorQA==}
-    engines: {node: '>=18'}
-    dev: true
-
   /globalthis@1.0.4:
     resolution: {integrity: sha512-DpLKbNU4WylpxJykQujfCcwYWiV/Jhm50Goo0wrVILAv5jOr9d+H+UR3PhSCD2rCCEIg0uc+G+muBTwD54JhDQ==}
     engines: {node: '>= 0.4'}
@@ -5793,24 +5771,6 @@ packages:
       has-proto: 1.0.3
       is-typed-array: 1.1.13
       possible-typed-array-names: 1.0.0
-    dev: true
-
-  /typescript-eslint@8.8.0(eslint@8.57.1)(typescript@5.6.2):
-    resolution: {integrity: sha512-BjIT/VwJ8+0rVO01ZQ2ZVnjE1svFBiRczcpr1t1Yxt7sT25VSbPfrJtDsQ8uQTy2pilX5nI9gwxhUyLULNentw==}
-    engines: {node: ^18.18.0 || ^20.9.0 || >=21.1.0}
-    peerDependencies:
-      typescript: '*'
-    peerDependenciesMeta:
-      typescript:
-        optional: true
-    dependencies:
-      '@typescript-eslint/eslint-plugin': 8.8.0(@typescript-eslint/parser@8.8.0)(eslint@8.57.1)(typescript@5.6.2)
-      '@typescript-eslint/parser': 8.8.0(eslint@8.57.1)(typescript@5.6.2)
-      '@typescript-eslint/utils': 8.8.0(eslint@8.57.1)(typescript@5.6.2)
-      typescript: 5.6.2
-    transitivePeerDependencies:
-      - eslint
-      - supports-color
     dev: true
 
   /typescript@5.6.2:
