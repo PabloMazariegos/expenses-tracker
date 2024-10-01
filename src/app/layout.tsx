@@ -1,6 +1,6 @@
-import type { Metadata } from "next";
-import localFont from "next/font/local";
 import "./globals.css";
+import localFont from "next/font/local";
+import type { Metadata } from "next";
 import { Providers } from "./providers";
 
 const geistSans = localFont({
@@ -18,11 +18,7 @@ export const metadata: Metadata = {
   title: "Expenses tracker",
 };
 
-export default function RootLayout({
-  children,
-}: Readonly<{
-  children: React.ReactNode;
-}>) {
+export default function RootLayout({children}: Readonly<{children: React.ReactNode}>) {
   return (
     <html lang="en" className="dark">
       <body
