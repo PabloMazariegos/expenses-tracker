@@ -5,7 +5,7 @@ export async function GET(request: Request){
   const { searchParams, origin } = new URL(request.url)
 
   const authCode = searchParams.get('code')
-  const nextUrl = searchParams.get('next') ?? '/'
+  const nextUrl = searchParams.get('next') ?? '/dashboard'
 
   if(!authCode){
     console.error('No authentication code received')
