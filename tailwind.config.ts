@@ -9,6 +9,10 @@ const config: Config = {
     "./node_modules/@nextui-org/theme/dist/**/*.{js,ts,jsx,tsx}"
   ],
   theme: {
+    fontFamily: {
+      sans: ['var(--font-geist-sans)'],
+      mono: ['var(--font-geist-mono)'],
+    },
     extend: {
       colors: {
         background: "var(--background)",
