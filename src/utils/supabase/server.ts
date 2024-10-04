@@ -2,34 +2,34 @@ import { createServerClient } from '@supabase/ssr'
 import { cookies } from 'next/headers'
 
 export function createClient() {
-  const cookieStore = cookies()
+	const cookieStore = cookies()
 
-  return createServerClient(
+	return createServerClient(
     process.env.NEXT_PUBLIC_SUPABASE_URL!,
     process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY!,
     {
-      cookies: {
-        getAll() {
-          return cookieStore.getAll()
-        },
+    	cookies: {
+    		getAll() {
+    			return cookieStore.getAll()
+    		},
 
-        setAll(cookiesToSet) {
-          try {
-            cookiesToSet.forEach(({name, value, options}) => 
-              cookieStore.set(name, value, options)
-            )
+    		setAll(cookiesToSet) {
+    			try {
+    				cookiesToSet.forEach(({name, value, options}) => 
+    					cookieStore.set(name, value, options)
+    				)
 
-          } catch(error) {
-            console.log('Error setting cookies: ', error)
-          }
-        },
-      },
+    			} catch(error) {
+    				console.log('Error setting cookies: ', error)
+    			}
+    		},
+    	},
     }
-  )
+	)
 }
 
 export async function getUserInformation() {
-  const supabase = createClient()
-  const userResponse = await supabase.auth.getUser()
-  return userResponse.data.user
+	const supabase = createClient()
+	const userResponse = await supabase.auth.getUser()
+	return userResponse.data.user
 }

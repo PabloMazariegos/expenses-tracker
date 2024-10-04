@@ -1,4 +1,4 @@
-"use client"
+'use client'
 
 import { createClient } from '@/utils/supabase/client'
 import {NextUIProvider} from '@nextui-org/react'
@@ -8,40 +8,40 @@ import { createContext, useContext, useEffect, useState } from 'react'
 const SessionContext = createContext<Session | null>(null)
 
 export function Providers({children}: { children: React.ReactNode }) {
-  const [session, setSession] = useState<Session | null>(null)
+	const [session, setSession] = useState<Session | null>(null)
 
-  function sessionSuscription(event:AuthChangeEvent, session:Session|null){
-    if(event === 'SIGNED_OUT'){
-      setSession(null)
+	function sessionSuscription(event:AuthChangeEvent, session:Session|null){
+		if(event === 'SIGNED_OUT'){
+			setSession(null)
 
-    }else if(session){
-      setSession(session)
-    }
-  }
+		}else if(session){
+			setSession(session)
+		}
+	}
 
-  useEffect(() => {
-    const supabase = createClient()
-    const {data: { subscription }} = supabase.auth.onAuthStateChange(sessionSuscription)
+	useEffect(() => {
+		const supabase = createClient()
+		const {data: { subscription }} = supabase.auth.onAuthStateChange(sessionSuscription)
 
-    return () => {
-      subscription.unsubscribe()
-    }
-  }, [])
+		return () => {
+			subscription.unsubscribe()
+		}
+	}, [])
 
-  return (
-    <NextUIProvider>
-      <SessionContext.Provider value={session}>
-        {children}
-      </SessionContext.Provider>
-    </NextUIProvider>
-  )
+	return (
+		<NextUIProvider>
+			<SessionContext.Provider value={session}>
+				{children}
+			</SessionContext.Provider>
+		</NextUIProvider>
+	)
 }
 
 export function useSessionContext(){
-  return useContext(SessionContext)
+	return useContext(SessionContext)
 }
 
 export function useUserSessionContext(){
-  const session = useContext(SessionContext)
-  return session?.user
+	const session = useContext(SessionContext)
+	return session?.user
 }
