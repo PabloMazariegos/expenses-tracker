@@ -27,13 +27,19 @@ export default function NavigationBar() {
 		{ title: 'Budgets', route: '/dashboard/budgets' }
 	];
 
+	const landingItems = [
+		{ title: 'Features', route: '/#features' },
+		{ title: 'AI', route: '/#AI' },
+		{ title: 'Signup', route: '/#signup' }
+	]
+
 	function handleMenuItemClick() {
 		if (isMenuOpen) {
 			setIsMenuOpen(false);
 		}
 	}
 
-	const navItems = session ? dashboardItems : [];
+	const navItems = session && pathname.startsWith('/dashboard') ? dashboardItems : landingItems;
 
 	const isActive = (route: string) => pathname === route;
 

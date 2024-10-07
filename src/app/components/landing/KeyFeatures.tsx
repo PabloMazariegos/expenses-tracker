@@ -3,7 +3,7 @@ import Feature from "./Feature";
 
 export default function KeyFeatures() {
 	return (
-		<section className="w-full py-12 md:py-24 lg:py-32 px-2 sm:px-5 flex flex-col items-center justify-center text-center gap-6">
+		<section id="features" className="w-full py-12 md:py-24 lg:py-32 px-2 sm:px-5 flex flex-col items-center justify-center text-center gap-6">
 			<div className="container px-4 md:px-6">
 				<h2 className="text-3xl sm:text-4xl md:text-5xl font-bold tracking-tighter text-center mb-12">
 					Key features

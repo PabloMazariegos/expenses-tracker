@@ -2,12 +2,13 @@
 
 import { Dropdown, DropdownTrigger, Avatar, DropdownMenu, DropdownItem } from '@nextui-org/react'
 import { createClient } from '@/utils/supabase/client'
-import { useRouter } from 'next/navigation'
+import { usePathname, useRouter } from 'next/navigation'
 import { useUserSessionContext } from '@/app/providers'
 import React from 'react'
 
 export default function UserOptions() {  
 	const userSession = useUserSessionContext()
+	const pathname = usePathname();
 	const avatarUrl = userSession?.user_metadata.avatar_url || null
 	const emailAddress = userSession?.email || 'n/a'
 
@@ -22,7 +23,7 @@ export default function UserOptions() {
 	return (
 		<>
 			{
-				userSession &&
+				(userSession && pathname.startsWith('/dashboard')) &&
       <Dropdown placement='bottom-end'>
       	<DropdownTrigger>
       		<Avatar

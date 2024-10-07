@@ -4,7 +4,7 @@ import { LuBrainCircuit } from "react-icons/lu";
 export default function AIFunctions() {
 	
 	return (
-		<section className="w-full py-12 md:py-24 lg:py-32 px-8 sm:px-5 flex flex-col items-center justify-center text-center gap-6 bg-gradient-to-b from-primary-50 to-black">
+		<section id="AI" className="w-full py-12 md:py-24 lg:py-32 px-8 sm:px-5 flex flex-col items-center justify-center text-center gap-6 bg-gradient-to-b from-primary-50 to-black">
 			<div className="space-y-3">
 				<div className="flex justify-center">
 					<LuBrainCircuit className="text-8xl" />
