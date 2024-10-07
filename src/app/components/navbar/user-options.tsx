@@ -4,6 +4,7 @@ import { Dropdown, DropdownTrigger, Avatar, DropdownMenu, DropdownItem } from '@
 import { createClient } from '@/utils/supabase/client'
 import { useRouter } from 'next/navigation'
 import { useUserSessionContext } from '@/app/providers'
+import React from 'react'
 
 export default function UserOptions() {  
 	const userSession = useUserSessionContext()

@@ -49,13 +49,13 @@ export default function NavigationBar() {
 	);
 
 	return (
-		<Navbar isMenuOpen={isMenuOpen} onMenuOpenChange={setIsMenuOpen}>
+		<Navbar maxWidth='xl' isMenuOpen={isMenuOpen} onMenuOpenChange={setIsMenuOpen}>
 			<NavbarContent>
 				<NavbarMenuToggle aria-label={isMenuOpen ? 'Close menu' : 'Open menu'} className='sm:hidden' />
 
 				<NavbarBrand>
 					<NextLink href={session ? '/dashboard' : '/'} passHref>
-						<p className='text-xl font-extrabold'>Expenses Tracker</p>
+						<p className='text-xl font-extrabold '>Expenses Tracker</p>
 					</NextLink>
 				</NavbarBrand>
 			</NavbarContent>

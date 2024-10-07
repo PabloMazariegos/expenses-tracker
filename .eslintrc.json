@@ -14,14 +14,6 @@
 			"warn",
 			"tab"
 		],
-		"quotes": [
-			"warn",
-			"single"
-		],
-		"jsx-quotes": [
-			"warn",
-			"prefer-single"
-		],
 		"@typescript-eslint/no-unused-vars": [
 			"warn",
 			{
