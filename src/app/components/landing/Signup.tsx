@@ -5,7 +5,7 @@ export default function Signup() {
 	const router = useRouter()
 
 	return (
-		<section className="w-full py-12 md:py-24 lg:py-32 px-8 sm:px-5 flex flex-col items-center justify-center text-center gap-6">
+		<section className="w-full py-40 md:py-24 lg:py-32 px-8 sm:px-5 flex flex-col items-center justify-center text-center gap-6">
 			<div className="space-y-2">
 				<h2 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl text-white">
 					Ready to Optimize Your Finances?

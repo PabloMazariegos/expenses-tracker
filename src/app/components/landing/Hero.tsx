@@ -8,7 +8,7 @@ export default function Hero() {
 	const router = useRouter()
 
 	return (
-		<section className="w-full py-20 md:py-24 px-8 sm:px-5 flex flex-col items-center justify-center text-center gap-6">
+		<section className="w-full py-40 md:py-24 px-8 sm:px-5 flex flex-col items-center justify-center text-center gap-6">
 			<h1 className="w-fit text-4xl md:text-6xl font-bold tracking-tighter text-pretty">
 				Your Intelligent {" "}
 				<span className="font-extrabold bg-gradient-to-r from-primary to-cyan-700 text-transparent bg-clip-text"> 
