@@ -55,7 +55,7 @@ export default function NavigationBar() {
 
 				<NavbarBrand>
 					<NextLink href={session ? '/dashboard' : '/'} passHref>
-						<p className='text-xl font-extrabold '>Expenses Tracker</p>
+						<p className='text-xl font-extrabold '>ExpenseTracker</p>
 					</NextLink>
 				</NavbarBrand>
 			</NavbarContent>
