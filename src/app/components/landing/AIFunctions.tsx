@@ -16,18 +16,18 @@ export default function AIFunctions() {
 					Our advanced AI analyzes your spending patterns and provides personalized recommendations to improve
 				</p>
 			</div>
-			<ul className="grid gap-2 py-4">
-				<li className="flex items-center gap-2 text-primary">
+			<ul className="grid gap-2 py-5">
+				<li className="flex gap-1 items-center text-primary">
 					<BiBrain className="text-2xl" />
-					<span>Expense optimization suggestions</span>
+					<span className="text-sm sm:text-medium">Expense optimization suggestions</span>
 				</li>
-				<li className="flex items-center gap-2 text-primary">
+				<li className="flex gap-1 items-center text-primary">
 					<BiBrain className="text-2xl" />
-					<span>Budget adjustments based on your goals</span>
+					<span className="text-sm sm:text-medium">Budget adjustments based on your goals</span>
 				</li>
-				<li className="flex items-center gap-2 text-primary">
+				<li className="flex gap-1 items-center text-primary">
 					<BiBrain className="text-2xl" />
-					<span>Potential savings opportunities</span>
+					<span className="text-sm sm:text-medium">Potential savings opportunities</span>
 				</li>
 			</ul>
 		</section>
