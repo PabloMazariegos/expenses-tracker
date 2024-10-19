@@ -53,7 +53,7 @@ export default function NavigationBar() {
 	}
 
 	const navItems = identifyNavigationItems()
-	const isActive = (route: string) => pathname.startsWith(route)
+	const isActive = (route: string) => pathname === route
 	const showSignInButton = !session && pathname === '/'
 
 	const NavLink = ({ title, route }: { route: string; title: string }) => (
