@@ -1,9 +1,9 @@
-'use client';
+'use client'
 
-import React from 'react';
-import UserOptions from './user-options';
-import NextLink from 'next/link';
-import { useUserSessionContext } from '@/app/providers';
+import React from 'react'
+import UserOptions from './user-options'
+import NextLink from 'next/link'
+import { useUserSessionContext } from '@/app/providers'
 import {
 	Navbar,
 	NavbarBrand,
@@ -11,21 +11,22 @@ import {
 	NavbarMenuToggle,
 	NavbarItem,
 	NavbarMenu,
-	NavbarMenuItem
-} from '@nextui-org/react';
-import { usePathname } from 'next/navigation';
+	NavbarMenuItem,
+	Button
+} from '@nextui-org/react'
+import { usePathname } from 'next/navigation'
 
 export default function NavigationBar() {
-	const session = useUserSessionContext();
-	const pathname = usePathname();
-	const [isMenuOpen, setIsMenuOpen] = React.useState(false);
+	const session = useUserSessionContext()
+	const pathname = usePathname()
+	const [isMenuOpen, setIsMenuOpen] = React.useState(false)
 
 	const dashboardItems = [
 		{ title: 'Dashboard', route: '/dashboard' },
 		{ title: 'Accounts', route: '/dashboard/accounts' },
 		{ title: 'Transactions', route: '/dashboard/transactions' },
 		{ title: 'Budgets', route: '/dashboard/budgets' }
-	];
+	]
 
 	const landingItems = [
 		{ title: 'Features', route: '/#features' },
@@ -35,13 +36,25 @@ export default function NavigationBar() {
 
 	function handleMenuItemClick() {
 		if (isMenuOpen) {
-			setIsMenuOpen(false);
+			setIsMenuOpen(false)
 		}
 	}
 
-	const navItems = session && pathname.startsWith('/dashboard') ? dashboardItems : landingItems;
+	function identifyNavigationItems() {
+		if (session && pathname.startsWith('/dashboard')) {
+			return dashboardItems
+		}
 
-	const isActive = (route: string) => pathname === route;
+		if (!session && pathname === '/') {
+			return landingItems
+		}
+
+		return []
+	}
+
+	const navItems = identifyNavigationItems()
+	const isActive = (route: string) => pathname.startsWith(route)
+	const showSignInButton = !session && pathname === '/'
 
 	const NavLink = ({ title, route }: { route: string; title: string }) => (
 		<NextLink href={route} passHref>
@@ -52,12 +65,15 @@ export default function NavigationBar() {
 				{title}
 			</span>
 		</NextLink>
-	);
+	)
 
 	return (
 		<Navbar maxWidth='xl' isMenuOpen={isMenuOpen} onMenuOpenChange={setIsMenuOpen}>
 			<NavbarContent>
-				<NavbarMenuToggle aria-label={isMenuOpen ? 'Close menu' : 'Open menu'} className='sm:hidden' />
+				<NavbarMenuToggle
+					aria-label={isMenuOpen ? 'Close menu' : 'Open menu'}
+					className='sm:hidden'
+				/>
 
 				<NavbarBrand>
 					<NextLink href={session ? '/dashboard' : '/'} passHref>
@@ -74,6 +90,18 @@ export default function NavigationBar() {
 				))}
 			</NavbarContent>
 
+			{showSignInButton && (
+				<NavbarContent className='sm:flex gap-4' justify='end'>
+					<NavbarItem>
+						<NextLink href='/login' passHref>
+							<Button variant='solid' color='primary' size='sm'>
+								Sign In
+							</Button>
+						</NextLink>
+					</NavbarItem>
+				</NavbarContent>
+			)}
+
 			<NavbarMenu>
 				{navItems.map(({ title, route }, index) => (
 					<NavbarMenuItem key={`${title}-${index}`} isActive={isActive(route)}>
@@ -82,9 +110,11 @@ export default function NavigationBar() {
 				))}
 			</NavbarMenu>
 
-			<NavbarContent as='div' justify='end'>
-				<UserOptions />
-			</NavbarContent>
+			{session && (
+				<NavbarContent as='div' justify='end'>
+					<UserOptions />
+				</NavbarContent>
+			)}
 		</Navbar>
-	);
+	)
 }
