@@ -24,7 +24,8 @@ export default function NavigationBar() {
 		{ title: 'Dashboard', route: '/dashboard' },
 		{ title: 'Accounts', route: '/dashboard/accounts' },
 		{ title: 'Transactions', route: '/dashboard/transactions' },
-		{ title: 'Budgets', route: '/dashboard/budgets' }
+		{ title: 'Budgets', route: '/dashboard/budgets' },
+		{ title: 'AI tools ', route: '/dashboard/ai' }
 	];
 
 	const landingItems = [
