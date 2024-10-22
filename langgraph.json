@@ -1,0 +1,9 @@
+{
+  "dockerfile_lines": [],
+  "graphs": {
+    "agent": "./src/utils/langchain/agents/agent.ts:graph"
+  },
+  "env": ".env",
+  "node_version": "20",
+  "dependencies": ["."]
+}
