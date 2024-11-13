@@ -4,6 +4,5 @@
     "agent": "./src/utils/langchain/agents/agent.ts:graph"
   },
   "env": ".env",
-  "node_version": "20",
-  "dependencies": ["."]
+  "node_version": "20"
 }

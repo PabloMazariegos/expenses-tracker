@@ -12,6 +12,7 @@ import { obtainName } from "../tools/tool_obtain-external-data";
 const llm = new ChatOpenAI({
   model: "gpt-4o",
   temperature: 0,
+  verbose: false
 });
 
 const webSearchTool = obtainName;

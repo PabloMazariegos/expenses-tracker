@@ -9,7 +9,6 @@ export default function ChatComponent() {
   const { messages, input, handleInputChange, handleSubmit } = useChat({
     api: '/api/v1/chat',
     onFinish: (response) => {
-      console.log(response)
     }
   })
 

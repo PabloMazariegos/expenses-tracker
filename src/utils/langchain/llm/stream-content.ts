@@ -34,6 +34,6 @@ export const generateSteamDate = async (messages: VercelChatMessage[]) => {
 		chat_history: formattedPreviousMessages.join('\n'),
 		input: currentMessageContent
 	})
-
+	console.log(stream)
 	return LangChainAdapter.toDataStreamResponse(stream);
 }
